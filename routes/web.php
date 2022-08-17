@@ -18,12 +18,19 @@ Route::get('/', function () {
 });
 
 
-Route::get('/hello', function (){
-    return response('<h1>hello world</h1>', 200)
-        ->header('Content-Type', 'text/plain')
-        ->header('foo', 'bar');
-});
-
-Route::get('/posts/{id}', function ($id){
-    return response('Post ' .$id);
-})->where('id', '[0-9]+');
+//    Route::get('/hello', function (){
+//        return response('<h1>hello world</h1>', 200)
+//            ->header('Content-Type', 'text/plain')
+//            ->header('foo', 'bar');
+//    });
+//
+//    Route::get('/posts/{id}', function ($id){
+//    //    dd($id); // die and dump
+//    //    ddd($id); // die and dump all info
+//
+//        return response('Post ' .$id);
+//    })->where('id', '[0-9]+');
+//
+//    Route::get('/search', function (\Illuminate\Http\Request $request){
+//        dd($request->name . ' ' . $request->city);
+//    });
