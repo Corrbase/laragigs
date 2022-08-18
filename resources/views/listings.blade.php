@@ -1,18 +1,4 @@
-
-{{-- This code if you use only php(no blade.php) --}}
-
-<!--    <h1>--><?php //echo $heading ?><!--</h1>-->
-<!--    -->
-<!--    --><?php //foreach ($listings as $listing){
-//            echo "<h2>";
-//                echo $listing['title'];
-//            echo "</h2>";
-//            echo "<p>";
-//                echo $listing['description'];
-//            echo "</p>";
-//    }
-//
-//    ?>
+// listings
 
     <h1>{{ $heading }}</h1>
 
@@ -21,9 +7,14 @@
         @endif
 
 
+
    @foreach ($listings as $listing)
 
-       <h2>{{ $listing['title'] }}</h2>
+       <h2>
+           <a href="/listing/{{ $listing['id'] }}">
+               {{ $listing['title'] }}
+           </a>
+       </h2>
 
        <p>{{ $listing['description'] }}</p>
 
