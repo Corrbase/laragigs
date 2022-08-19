@@ -6,33 +6,23 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateListingsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('listings', function (Blueprint $table) {
             $table->id();
 
             $table->string('title');
-            $table->string('tags');
-            $table->string('company');
-            $table->string('location');
             $table->string('email');
             $table->string('website');
-            $table->text('description');
+            $table->string('tags')->nullable();
+            $table->string('company')->nullable();
+            $table->string('location')->nullable();
+            $table->text('description')->nullable();
 
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('listings');
