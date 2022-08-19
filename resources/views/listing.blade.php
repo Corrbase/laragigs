@@ -24,27 +24,18 @@
                 <div class="text-xl font-bold mb-4">
                     {{ $listing->company }}
                 </div>
+                @props(['tagsCsv'])
+
+                @php
+                    $tags = explode(',', $tagsCsv)
+                @endphp
                 <ul class="flex">
-                    <li
-                        class="bg-black text-white rounded-xl px-3 py-1 mr-2"
-                    >
-                        <a href="#">Laravel</a>
+ @foreach($tags as $tag)
+                    <li class="bg-black text-white rounded-xl px-3 py-1 mr-2">
+                        <a href="#">{{ $tag }}</a>
                     </li>
-                    <li
-                        class="bg-black text-white rounded-xl px-3 py-1 mr-2"
-                    >
-                        <a href="#">API</a>
-                    </li>
-                    <li
-                        class="bg-black text-white rounded-xl px-3 py-1 mr-2"
-                    >
-                        <a href="#">Backend</a>
-                    </li>
-                    <li
-                        class="bg-black text-white rounded-xl px-3 py-1 mr-2"
-                    >
-                        <a href="#">Vue</a>
-                    </li>
+                    @endforeach
+
                 </ul>
                 <div class="text-lg my-4">
                     <i class="fa-solid fa-location-dot"></i> {{ $listing->location }}
