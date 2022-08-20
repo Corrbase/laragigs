@@ -23,6 +23,14 @@ npm install
 ```
 
 - Set up the database and set appropriate variables in **.env** file (see **.env.example**)
+```
+php artisan key:generate
+```
+
+- Optimize the caches:
+```
+php artisan optimize
+```
 
 - **[Optional]** Checkout to the specific commit you want:
 ```bash

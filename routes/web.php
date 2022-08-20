@@ -26,13 +26,12 @@ Route::get('/', function () {
 
 // single listing
 
-Route::get('/listings/{id}', function ($id){
-
-       return view('listing', [
-           'listing' => Listing::find($id)
-       ]);
-
-
+Route::get('/listings/{id}', function ($id) {
+    $listing = Listing::find($id);
+//    dd($listing);
+    return view('listing', [
+        'listing' => $listing
+    ]);
 });
 
 

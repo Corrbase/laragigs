@@ -13,5 +13,6 @@
    @endforeach
 
 @else
+    <p>no listing found</p>
 @endunless
 @endsection
