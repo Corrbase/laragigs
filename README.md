@@ -47,3 +47,16 @@ git checkout <commit_hash>
 
 - [Laravel From Scratch 2022 | 4+ Hour Course](https://www.youtube.com/watch?v=MYyJ4PuL4pY)
 - [GitHub Repository](https://github.com/bradtraversy/laragigs)
+- [Common Resource Routes](#common-resource-routes)
+
+#### Common Resource Routes
+
+>index - show all listings </br>
+>show  - show single listing </br>
+>create - Show form to create ew listing </br>
+>store - store new listing </br>
+>edit - show form to edit listing </br>
+>update - update listing </br>
+>destroy - Delete listing </br>
+
+
