@@ -14,24 +14,24 @@ use App\Models\Listing;
 |
 */
 
+// Common Resource Routes:
+// index - show all listings
+// show  - show single listing
+// create - Show form to create ew listing
+// store - store new listing
+// edit - show form to edit listing
+// update - update listing
+// destroy - Delete listing
+
 // all listing
 
-Route::get('/', function () {
-    return view('listings', [
-        'heading' => 'lastes lisenings',
-        'listings' => Listing::all(),
-    ]);
-});
+Route::get('/', [\App\Http\Controllers\ListingController::class, 'index']);
 
 
 // single listing
 
-Route::get('/listings/{id}', function ($id) {
-    $listing = Listing::find($id);
-//    dd($listing);
-    return view('listing', [
-        'listing' => $listing
-    ]);
-});
+Route::get('/listings/{listing}', [\App\Http\Controllers\ListingController::class, 'show']);
+
+
 
 
