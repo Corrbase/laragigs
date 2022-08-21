@@ -31,6 +31,10 @@ Route::get('/', [\App\Http\Controllers\ListingController::class, 'index']);
 
 Route::get('/listings/create', [\App\Http\Controllers\ListingController::class, 'create']);
 
+// store listing data
+
+Route::post('/listings/', [\App\Http\Controllers\ListingController::class, 'store']);
+
 // single listing
 
 Route::get('/listings/{listing}', [\App\Http\Controllers\ListingController::class, 'show']);
