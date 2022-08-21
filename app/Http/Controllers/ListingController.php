@@ -18,6 +18,12 @@ class ListingController extends Controller
         ]);
     }
 
+    // show create form
+
+    public function create()
+    {
+        return view('listings.create');
+    }
 
     // show single listing
     public function show(Listing $listing)
@@ -26,4 +32,6 @@ class ListingController extends Controller
             'listing' => $listing
         ]);
     }
+
+
 }
