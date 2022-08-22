@@ -8,40 +8,33 @@ use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
-    // Show Register/create Form
-    public function create()
-    {
+    // Show Register/Create Form
+    public function create() {
         return view('users.register');
     }
 
     // Create New User
-
-    public function  store(Request $request)
-    {
+    public function store(Request $request) {
         $formFields = $request->validate([
-            'name' => 'required|min:3',
+            'name' => ['required', 'min:3'],
             'email' => ['required', 'email', Rule::unique('users', 'email')],
-            'password' => ['required', 'confirmed', 'min:6'],
+            'password' => 'required|confirmed|min:6'
         ]);
 
-
+        // Hash Password
         $formFields['password'] = bcrypt($formFields['password']);
 
+        // Create User
         $user = User::create($formFields);
 
-        // create user
-
-        // login
-
+        // Login
         auth()->login($user);
 
         return redirect('/')->with('message', 'User created and logged in');
     }
 
-    // Logout user
-
-    public function  logout(Request $request)
-    {
+    // Logout User
+    public function logout(Request $request) {
         auth()->logout();
 
         $request->session()->invalidate();
@@ -51,15 +44,12 @@ class UserController extends Controller
 
     }
 
-    // Show login form
-
-    public function login()
-    {
+    // Show Login Form
+    public function login() {
         return view('users.login');
     }
 
-    // Login New User
-
+    // Authenticate User
     public function authenticate(Request $request) {
         $formFields = $request->validate([
             'email' => ['required', 'email'],
