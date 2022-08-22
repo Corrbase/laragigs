@@ -52,9 +52,16 @@ Route::delete('/listings/{listing}', [\App\Http\Controllers\ListingController::c
 
 Route::get('/listings/{listing}', [\App\Http\Controllers\ListingController::class, 'show']);
 
+// Show register/create Form
 
+Route::get('/register', [\App\Http\Controllers\UserController::class, 'create']);
 
+// Create new User
 
+Route::post("/users", [\App\Http\Controllers\UserController::class, 'store']);
 
+// Log user auth
+
+Route::post('/logout', [\App\Http\Controllers\UserController::class, 'logout']);
 
 
