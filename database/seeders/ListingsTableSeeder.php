@@ -14,6 +14,7 @@ class ListingsTableSeeder extends Seeder
 
         for ($i = 0; $i < 10; $i++) {
             Listing::create([
+                'user_id' => 1,
                 'title' => $faker_en->sentence(2, true),
                 'email' => $faker_en->email,
                 'website' => $faker_en->url,

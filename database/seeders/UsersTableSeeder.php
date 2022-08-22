@@ -12,12 +12,12 @@ class UsersTableSeeder extends Seeder
     {
         $faker_en = FakerFactory::create('en_US');
 
-        for ($i = 0; $i < 5; $i++) {
-            User::create([
-                'name' => $faker_en->name,
-                'email' => $faker_en->email,
-                'password' => bcrypt('password'),
-            ]);
-        }
+
+        User::create([
+            'name' => 'John Doe',
+            'email' => 'admin@gmail.com',
+            'password' => bcrypt('123456789'),
+        ]);
+
     }
 }
