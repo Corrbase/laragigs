@@ -12,6 +12,7 @@ class CreateListingsTable extends Migration
             $table->id();
 
             $table->string('title');
+            $table->string('logo')->nullable();
             $table->string('email');
             $table->string('website');
             $table->string('tags')->nullable();
